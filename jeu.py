@@ -2,7 +2,7 @@ import random
 from carte import Carte
 from main import Main
 
-class jeu:
+class paquet:
 	
 	couleur=["H","S","D","C"]
 	nom_carte=[2,3,4,5,6,7,8,9,10,"J","Q","K","A"]
@@ -17,3 +17,11 @@ class jeu:
 	def affichePaquet(self):
 		self.paquet.afficher()
 
+	def melangePaquet(self):
+		paquetMelange=list()
+		self.paquet=paquet.liste
+		for i in range(52):
+			j=random.randint(0,len(paquet))
+			paquetMelange.append(paquet[j])
+			del paquet[j]
+		self.paquet.liste=paquetMelange
