@@ -18,10 +18,10 @@ class paquet:
 		self.paquet.afficher()
 
 	def melangePaquet(self):
-		paquetMelange=list()
-		self.paquet=paquet.liste
+		paquetMelange=Main(52)
 		for i in range(52):
-			j=random.randint(0,len(paquet))
-			paquetMelange.append(paquet[j])
-			del paquet[j]
-		self.paquet.liste=paquetMelange
+			j=random.randint(0,self.paquet.nbCarte-1)
+			paquetMelange.ajouterCarte(self.paquet.enleverCarte(j))
+		self.paquet=paquetMelange
+
+			

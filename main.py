@@ -18,9 +18,11 @@ class Main:
         self.nbCarte+=1
         self.liste.insert(self.nbCarte-1,carte)
 
-    def enleverCarte(self,carte):
-        for i in range(nbCarte):
-            if liste[i]==carte:
-                del liste[i]
+    def enleverCarte(self,j):
+        carte1=self.liste[j]
+        del self.liste[j]
         self.nbCarte-=1
+        return carte1
     
+    def taille(self):
+        return self.nbCarte
