@@ -1,3 +1,4 @@
+
 import random
 from carte import Carte
 from main import Main
@@ -24,4 +25,8 @@ class paquet:
 			paquetMelange.ajouterCarte(self.paquet.enleverCarte(j))
 		self.paquet=paquetMelange
 
-			
+	def taille(self):
+		return self.paquet.taille()
+
+	def donnerCarte(self):			
+		return self.paquet.enleverCarte(0)
