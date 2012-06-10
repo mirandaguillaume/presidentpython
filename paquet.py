@@ -30,3 +30,12 @@ class paquet:
 
 	def donnerCarte(self):			
 		return self.paquet.enleverCarte(0)
+
+	def distribuer(self,listejoueurs,nbjoueurs):
+		cpt=0
+		while self.paquet.taille()!=0 :
+			listejoueurs[cpt%nbjoueurs].recevoirCarte(self.donnerCarte())
+			cpt+=1
+
+	
+			

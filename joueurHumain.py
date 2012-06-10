@@ -25,4 +25,7 @@ class joueurHumain:
     def poserCarte(self, carte):
         self.main.enleverCarte(carte)
 
+    def NbMain(self):
+        return self.main.taille()
+
 
