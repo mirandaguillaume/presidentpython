@@ -3,28 +3,23 @@ import os
 from carte import Carte
 class Main:
 
-    liste=list()
-    nbCarte=0
-
-    def __init__ (self,maxi):
-        self.maxi=maxi
+    def __init__ (self):
+        self.liste=list()
 
     def afficher(self):
-        for i in range(self.nbCarte):
+        for i in range(len(self.liste)):
             if self.liste[i]!=0:
                 self.liste[i].affiche()
 
     def ajouterCarte(self, carte):
-        self.nbCarte+=1
-        self.liste.insert(self.nbCarte-1,carte)
+        self.liste.insert(len(self.liste),carte)
 
     def enleverCarte(self,j):
         carte1=self.liste[j]
         del self.liste[j]
-        self.nbCarte-=1
         return carte1
     
     def taille(self):
-        return self.nbCarte
+        return len(self.liste)
 
     

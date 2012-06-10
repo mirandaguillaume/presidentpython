@@ -7,14 +7,10 @@ class joueurHumain:
     - son rang
     - sa main
     - son nom"""
-    rang=0
-    maxi=0
-    main=Main(0)
     seCouche=False
-    def __init__(self,nom,maxim):
+    def __init__(self,nom):
         self.nom=nom
-        self.maxi=maxim
-        main=Main(self.maxi)
+        self.main=Main()
 
     def afficher(self):
         print self.nom
@@ -24,7 +20,7 @@ class joueurHumain:
         self.main.ajouterCarte(carte)
 
     def poserCarte(self, carte):
-        self.main.enleverCarte(carte)
+        return self.main.enleverCarte(carte)
 
     def NbMain(self):
         return self.main.taille()
