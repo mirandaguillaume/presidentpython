@@ -26,3 +26,5 @@ class Main:
     
     def taille(self):
         return self.nbCarte
+
+    

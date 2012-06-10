@@ -10,7 +10,8 @@ class joueurHumain:
     rang=0
     maxi=0
     main=Main(0)
-    def __init__(self, nom,maxim):
+    seCouche=False
+    def __init__(self,nom,maxim):
         self.nom=nom
         self.maxi=maxim
         main=Main(self.maxi)

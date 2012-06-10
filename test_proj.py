@@ -2,15 +2,21 @@
 
 from carte import Carte
 from joueurHumain import joueurHumain
-from jeu import paquet
+from paquet import paquet
 
 nbjoueurs=4
 nbCartes=52
 joueurs=range(nbjoueurs)
-joueurs[0]=joueurHumain("Bob",nbCartes/nbjoueurs)
-joueurs[1]=joueurHumain("Sam",nbCartes/nbjoueurs)
-joueurs[2]=joueurHumain("Alf",nbCartes/nbjoueurs)
-joueurs[3]=joueurHumain("Max",nbCartes/nbjoueurs)
+nbCartesEnMain=nbCartes/nbjoueurs
+joueurs[0]=joueurHumain("Bob",nbCartesEnMain)
+joueurs[1]=joueurHumain("Sam",nbCartesEnMain)
+joueurs[2]=joueurHumain("Alf",nbCartesEnMain)
+joueurs[3]=joueurHumain("Max",nbCartesEnMain)
 j=paquet()
 j.melangePaquet()
 j.distribuer(joueurs,nbjoueurs)
+for i in range(4):
+	print joueurs[i].NbMain()
+print nbCartesEnMain
+while (1):
+	a=1
