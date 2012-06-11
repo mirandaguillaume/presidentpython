@@ -4,13 +4,13 @@ from carte import Carte
 from main import Main
 
 class paquet:
-	
-	couleur=["H","S","D","C"]
+
+	nom_couleur=["H","S","D","C"]
 	nom_carte=[2,3,4,5,6,7,8,9,10,"J","Q","K","A"]
 
 	def __init__(self):
 		self.paquet=Main()
-		for i in self.couleur:
+		for i in self.nom_couleur:
 			for j in self.nom_carte:
 				carte=Carte(i,j)
 				self.paquet.ajouterCarte(carte)

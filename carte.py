@@ -10,4 +10,30 @@ class Carte:
     def affiche(self):
         print "{0} de {1}".format(self.no,self.couleur)
 
+    def __gt__(self,other):
+    	if self.no==2 :
+    		return True
+    	elif other.no==2:
+    		return False
+    	elif self.no in [3,4,5,6,7,8,9,10] :
+    		if other.no in [3,4,5,6,7,8,9,10] :
+    			print "ok"
+    			return (self.no>other.no)
+    		else: return False
+    	elif self.no in ["J","Q","K","A"]:
+			if other.no in [3,4,5,6,7,8,9,10]:
+				return True
+			elif self.no=="J":
+				if other.no=="J":
+					return True
+				return False
+			elif self.no=="Q":
+				if other.no in ["J","Q"]:
+					return True
+				return False
+			elif self.no=="K":
+				if other.no=="A":
+					return False
+				return True
+			return True
 

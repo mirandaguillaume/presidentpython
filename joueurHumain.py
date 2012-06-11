@@ -25,4 +25,4 @@ class joueurHumain:
     def NbMain(self):
         return self.main.taille()
 
-
+    """def jouer(DerniereCarte):"""

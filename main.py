@@ -22,4 +22,6 @@ class Main:
     def taille(self):
         return len(self.liste)
 
-    
+    """def trieMain(self):
+        for i in range(len(liste)):
+            while (liste[i+1]>)"""            

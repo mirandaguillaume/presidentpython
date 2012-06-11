@@ -24,14 +24,21 @@ class jeu:
 
 	def tour(self,NouvelleListe):
 		cpt=self.nbGagnant
+		DerniereCarte=list()
 		while(self.resteUnJoueur()):
-			if (!Joueurs[cpt%self.nbJoueurs].seCouche):
+			if (!Joueurs[cpt%self.nbJoueurs].seCouche) or (Joueurs[cpt%nbJoueurs].nbMain()!=0):
 				print "Au tour de {0}".format(Joueur[cpt%self.nbJoueurs].nom)
-				DerniereCarte=Joueurs[cpt%self.nbJoueurs].jouer(DerniereCarte,self.nbGagnant);
+				NewDerniereCarte=Joueurs[cpt%self.nbJoueurs].jouer(DerniereCarte);
+				if(NewDerniereCarte!=DerniereCarte)
+					self.nbGagnant=cpt%self.nbJoueurs
+					DerniereCarte=NewDerniereCarte
+				if (Joueurs[cpt%self.nbJoueurs].nbMain()==0)
+					NouvelleListe.insert(len(NouvelleListe),Joueurs[cpt%self.nbJoueurs])
 				if (DerniereCarte[0].no=2) :
 					break;
 				else
 					cpt++;
+
 	def resteUnJoueurEnJeu(self):
 		cpt=0
 		for i in range(i):
