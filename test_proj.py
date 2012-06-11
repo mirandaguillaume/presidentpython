@@ -14,9 +14,9 @@ joueurs[2]=joueurHumain("Alf")
 joueurs[3]=joueurHumain("Max")
 j=paquet()
 j.melangePaquet()
-j.distribuer(joueurs,nbCartesEnMain)
+j.paquet.trieMain()
+j.affichePaquet()
+j.melangePaquet()
+"""j.distribuer(joueurs,nbCartesEnMain)
 for i in range(4):
-	joueurs[i].afficher()
-carte1=Carte("H","A")
-carte2=Carte("H","A")
-print carte1>carte2
+	joueurs[i].afficher()"""

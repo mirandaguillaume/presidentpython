@@ -22,6 +22,14 @@ class Main:
     def taille(self):
         return len(self.liste)
 
-    """def trieMain(self):
-        for i in range(len(liste)):
-            while (liste[i+1]>)"""            
+    def trieMain(self):
+        aucunEchange=False
+        while (aucunEchange==False):
+            aucunEchange=True
+            for j in range(len(self.liste)-1):
+                if self.liste[j] > self.liste[j+1] :
+                    self.liste[j],self.liste[j+1]=self.liste[j+1],self.liste[j]
+                    aucunEchange=False
+
+
+
