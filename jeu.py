@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from carte import Carte
 from paquet import paquet
 from joueurHumain import joueurHumain 
 from main import Main
@@ -13,34 +14,35 @@ class jeu:
 		self.Joueurs=Joueurs
 		Paquet.distribuer(self.Joueurs,52/nbJoueurs)
 
-	def resteUnJoueur(self):
+	def resteDeuxJoueur(self):
 		cpt=0
 		for i in range(len(self.Joueurs)):
-			if (self.Joueurs[i].seCouche):
+			if (self.Joueurs[i].seCouche==True):
 				cpt+=1
-		if (cpt==3):
+		if (cpt<3):
 			return True
 		return False
 
 	def tour(self,NouvelleListe):
 		cpt=self.nbGagnant
-		DerniereCarte=list()
+		DerniereCarte=Carte("H",3)
 		print "ok1"
-		while(self.resteUnJoueur()):
+		while(self.resteDeuxJoueur()):
 			print "ok2"
 			if (self.Joueurs[cpt%self.nbJoueurs].seCouche==False): 
-				if (self.Joueurs[cpt%nbJoueurs].nbMain()==0):
+				if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
 					break
-				print "Au tour de {0}".format(self.Joueur[cpt%self.nbJoueurs].nom)
+				print "Au tour de {0}".format(self.Joueurs[cpt%self.nbJoueurs].nom)
 				NewDerniereCarte=self.Joueurs[cpt%self.nbJoueurs].jouer(DerniereCarte);
 				if(NewDerniereCarte!=DerniereCarte):
 					self.nbGagnant=cpt%self.nbJoueurs
 					DerniereCarte=NewDerniereCarte
-				if (self.Joueurs[cpt%self.nbJoueurs].nbMain()==0):
+				if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
 					NouvelleListe.insert(len(NouvelleListe),self.Joueurs[cpt%self.nbJoueurs])
-				if (DerniereCarte[0].no==2) :
+				if (DerniereCarte.no==2) :
 					break
 				else:
+					DerniereCarte.affiche()
 					cpt+=1
 
 	def resteUnJoueurEnJeu(self):

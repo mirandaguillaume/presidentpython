@@ -31,5 +31,5 @@ class Main:
                     self.liste[j],self.liste[j+1]=self.liste[j+1],self.liste[j]
                     aucunEchange=False
 
-
-
+    def plusPetit(self,derniereCarte,i):
+        return derniereCarte>self.liste[i]

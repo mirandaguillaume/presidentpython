@@ -27,22 +27,25 @@ class joueurHumain:
     def NbMain(self):
         return self.main.taille()
 
-    def jouer(DerniereCarte):
-        main.trieMain()        
+    def jouer(self,DerniereCarte):
+        self.main.trieMain()        
         MainProv=self.affichePoss(DerniereCarte)
         rep=input("Quelle carte voulez_vous choisir ?")
         if rep!='R':
-            DerniereCarte=MainProv[rep]
+            return MainProv.liste[rep-1]
+        else :
+            return DerniereCarte
     
-    def affichePoss(DerniereCarte):
+    def affichePoss(self,DerniereCarte):
         i=0
-        MainProv=list()
-        while (DerniereCarte[0]>main[i]):
+        MainProv=Main()
+        while (self.main.plusPetit(DerniereCarte,i)==True):
             i+=1
-        while (i<len(main)):
-            MainProv.insert(len(MainProv),main[i])
+        while (i<self.main.taille()):
+            MainProv.ajouterCarte(self.main.liste[i])
+            i+=1
         MainProv.afficher()
-        
+        return MainProv
 
 
 
