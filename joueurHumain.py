@@ -28,24 +28,21 @@ class joueurHumain:
         return self.main.taille()
 
     def jouer(self,DerniereCarte):
-        self.main.trieMain()        
-        MainProv=self.affichePoss(DerniereCarte)
-        rep=input("Quelle carte voulez_vous choisir ?")
-        if rep!='R':
-            return MainProv.liste[rep-1]
-        else :
-            return DerniereCarte
-    
-    def affichePoss(self,DerniereCarte):
-        i=0
-        MainProv=Main()
-        while (self.main.plusPetit(DerniereCarte,i)==True):
-            i+=1
-        while (i<self.main.taille()):
-            MainProv.ajouterCarte(self.main.liste[i])
-            i+=1
-        MainProv.afficher()
-        return MainProv
+        self.main.trieMain()
+        self.main.afficher()
+        while 1:
+            rep=input("Quelle carte voulez_vous choisir (R pour renoncer) ?")
+            if self.main.taille()<rep:
+                print "Le carte demandée n'est pas dans votre main."
+            if rep!='R':
+                if self.main.liste[rep-1].no==DerniereCarte.no:
+                    return self.poserCarte(rep-1)
+                elif (self.main.liste[rep-1]>DerniereCarte) :
+                    return self.poserCarte(rep-1)
+                else :
+                    print "Vous ne pouvez pas jouer cette carte."
+            else :
+                return DerniereCarte
 
 
 

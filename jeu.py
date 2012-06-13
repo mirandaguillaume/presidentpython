@@ -25,7 +25,7 @@ class jeu:
 
 	def tour(self,NouvelleListe):
 		cpt=self.nbGagnant
-		DerniereCarte=Carte("H",3)
+		DerniereCarte=Carte("H",1)
 		print "ok1"
 		while(self.resteDeuxJoueur()):
 			print "ok2"
@@ -40,6 +40,7 @@ class jeu:
 				if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
 					NouvelleListe.insert(len(NouvelleListe),self.Joueurs[cpt%self.nbJoueurs])
 				if (DerniereCarte.no==2) :
+					print "Le gagnant du tour est {0}".format(self.Joueurs[self.nbGagnant].nom)
 					break
 				else:
 					DerniereCarte.affiche()
@@ -54,6 +55,6 @@ class jeu:
 			return True
 		return False
 
-	def FinTour():
+	def manche():
 		while(self.resteUnJoueurEnJeu()) :
 			tour(NouvelleListe)

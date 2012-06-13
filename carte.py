@@ -18,7 +18,7 @@ class Carte:
     	elif other.no==2:
     		return False
     	elif self.no in [3,4,5,6,7,8,9,10] :
-    		if other.no in [3,4,5,6,7,8,9,10] :
+    		if other.no in [1,3,4,5,6,7,8,9,10] :
     			return (self.no>other.no)
     		else: return False
     	elif self.no in ["J","Q","K","A"]:
@@ -35,4 +35,3 @@ class Carte:
 					return False
 				return True
 			return True
-
