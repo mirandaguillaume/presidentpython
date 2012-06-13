@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from proto import proto
 from pynetez.Session import Session
 from pynetez.Client  import Client

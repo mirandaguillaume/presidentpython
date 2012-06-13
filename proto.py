@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from pynetez.Protocol import Protocol, int32, listof
 
 proto = Protocol()
@@ -11,6 +12,6 @@ proto.define("err1")
 proto.define("err2")
 proto.define("abort")
 proto.define("won") 
-proto.define("CreatePlayer",listeof)
-proto.define("AfficheMain",listeof)
+proto.define("CreatePlayer",listof)
+proto.define("AfficheMain",listof)
 
