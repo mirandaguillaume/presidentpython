@@ -23,7 +23,8 @@ class jeu:
 			return True
 		return False
 
-	def tour(self,NouvelleListe):
+	def tour(self):
+		NouvelleListe=list()
 		cpt=self.nbGagnant
 		DerniereCarte=Carte("H",1)
 		print "ok1"
@@ -49,12 +50,25 @@ class jeu:
 	def resteUnJoueurEnJeu(self):
 		cpt=0
 		for i in range(i):
-			if (self.Joueurs[i].seCouche):
+			if (self.Joueurs[i].main.taille()==0):
 				cpt+=1
 		if (cpt==3):
 			return True
 		return False
 
 	def manche():
+		NouvelleListe=list()
 		while(self.resteUnJoueurEnJeu()) :
 			tour(NouvelleListe)
+		self.Joueurs=NouvelleListe
+		self.EchangesCartes(0,nbJoueurs-1)
+
+	def EchangeCartes(Recv,Send):
+		print "Le prisonnier {0} donne ses 2 meilleures cartes au président {1}.".format(self.Joueurs[Send].nom,self.Joueurs[Recv].nom)
+		self.Joueurs[Send].trieMain()
+		self.Joueurs[Recv].recevoirCarte(self.Joueurs[Send].poserCarte(12))
+		self.Joueurs[Recv].recevoirCarte(self.Joueurs[Send].poserCarte(11))
+		print "Le président {0} donne ses 2 pires cartes au prisonnier {1}."format(self.Joueurs[Send].nom,self.Joueurs[Recv].nom)
+		self.Joueurs[Recv].trieMain()
+		self.Joueurs[Send].recevoirCarte(self.Joueurs[Recv].poserCarte(0))
+		self.Joueurs[Send].recevoirCarte(self.Joueurs[Recv].poserCarte(1))
