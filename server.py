@@ -13,9 +13,8 @@ class SessionOnServer(Session):
           else:
                self.send.logIn_Refused()
                
-     def do_pose(self, carte, nb):
-          carte1=Carte(carte[0],carte[1])
-          if GameMaster.poserCarte(carte1,nb):
+     def do_pose(self, n, nb):
+          if GameMaster.poserCarte(n,nb):
                pass
           
 server = Server(proto, SessionOnServer)

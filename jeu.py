@@ -23,22 +23,20 @@ class jeu:
 			return True
 		return False	
 
-	def possibleJouer(self,n,nb):
-		carte=self.Joueurs[nb].main.liste[n]
+	def possibleJouer(self,carte):
 		if carte.no==self.DerniereCarte.no:
 			return True
-		else: return carte>DerniereCarte
+		else: return carte>self.DerniereCarte
 	
 
-	def setDerniereCarte(n,nb):
-		carte=self.Joueurs[nb].main.liste[n]
+	def setDerniereCarte(self,carte):
 		self.DerniereCarte=carte
 
-	def setCpt():
-		cpt+=1
+	def setCpt(self):
+		self.cpt+=1
 		self.setNbGagnant()
 
-	def setNbGagnant():
+	def setNbGagnant(self):
 		self.nbGagnant=self.cpt%self.nbJoueurs
 
 	def setSeCouche(i,etat):
@@ -69,7 +67,7 @@ class jeu:
 				return True
 		return False
 
-	def manche():
+	def manche(self):
 		NouvelleListe=list()
 		while(self.resteUnJoueurEnJeu()) :
 			tour(NouvelleListe)

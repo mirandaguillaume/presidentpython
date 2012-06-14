@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from pynetez.Protocol import Protocol, string, int8, listof
+from pynetez.Protocol import Protocol, string, int8, listof, int32
 
 proto = Protocol()
-proto.define("demande",string, int8, int8)
+proto.define("demande",string, int32)
 proto.define("wait",string)
 proto.define("pose", int8,int8)
 proto.define("inGame", listof)
