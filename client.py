@@ -5,8 +5,9 @@ from pynetez.Client  import Client
 
 class SessionOnClient(Session):
 
+    CoupJoue=False
     def do_bonjour(self,nom):
-        print "Bienvenue ",nom
+        print "Bienvenue",nom
 
     def do_demande(self,nom):
         n=input("{0}, quelle carte voulez-vous poser ?".format(nom))
@@ -27,8 +28,14 @@ class SessionOnClient(Session):
     def do_lost_manche(self,place):
         pass
 
+    def setCoupJoue(etat):
+        CoupJoue=etat
+
     def do_wait(self, nom):
         print "En attente de ",nom
+        while not CoupJoue:
+            pass
+        CoupJoue=False
     
     def on_start(self):
         self.send.logIn(self.choisirNom())

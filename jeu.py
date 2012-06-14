@@ -26,9 +26,9 @@ class jeu:
 
 	def possibleJouer(self,carte):
 		nb=self.cpt%self.nbJoueurs
-			if carte.no==self.DerniereCarte.no:
-				return True
-			else: return carte>DerniereCarte
+		if carte.no==self.DerniereCarte.no:
+			return True
+		else: return carte>DerniereCarte
 	
 
 	def setDerniereCarte(carte):
@@ -36,41 +36,37 @@ class jeu:
 
 	def setCpt():
 		cpt+=1
+		self.setNbGagnant()
 
 	def setNbGagnant():
 		self.nbGagnant=self.cpt%self.nbJoueurs
 
-	def setSeCouche(etat):
-		seCouche=etat
+	def setSeCouche(i,etat):
+		self.Joueurs[i].seCouche=etat
 
 	def tour(self):
-	
-		while(self.resteDeuxJoueur()):
-			print "ok2"
-			if (self.Joueurs[cpt%self.nbJoueurs].seCouche==False): 
-				if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
-					break
-				print "Au tour de {0}".format(self.Joueurs[cpt%self.nbJoueurs].nom)
+		if (self.Joueurs[cpt%self.nbJoueurs].seCouche==False): 
+			if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
+	       			print "Au tour de {0}".format(self.Joueurs[cpt%self.nbJoueurs].nom)
 				NewDerniereCarte=self.Joueurs[cpt%self.nbJoueurs].jouer(DerniereCarte);
-				if(NewDerniereCarte!=DerniereCarte):
-					self.nbGagnant=cpt%self.nbJoueurs
-					DerniereCarte=NewDerniereCarte
+			if(NewDerniereCarte!=DerniereCarte):
+				self.nbGagnant=cpt%self.nbJoueurs
+				DerniereCarte=NewDerniereCarte
 				if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
 					NouvelleListe.insert(len(NouvelleListe),self.Joueurs[cpt%self.nbJoueurs])
-				if (DerniereCarte.no==2) :
-					print "Le gagnant du tour est {0}".format(self.Joueurs[self.nbGagnant].nom)
-					break
-				else:
-					DerniereCarte.affiche()
-					cpt+=1
-
+					if (DerniereCarte.no==2) :
+						print "Le gagnant du tour est {0}".format(self.Joueurs[self.nbGagnant].nom)
+      					else:
+						DerniereCarte.affiche()
+						cpt+=1
+		   			
 	def resteUnJoueurEnJeu(self):
 		cpt=0
 		for i in range(i):
 			if (self.Joueurs[i].main.taille()==0):
 				cpt+=1
-		if (cpt==3):
-			return True
+			if (cpt==3):
+				return True
 		return False
 
 	def manche():
