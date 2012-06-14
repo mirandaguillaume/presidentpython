@@ -9,9 +9,9 @@ class SessionOnClient(Session):
     def do_bonjour(self,nom):
         print "Bienvenue",nom
 
-    def do_demande(self,nom):
-        n=input("{0}, quelle carte voulez-vous poser ?".format(nom))
-        self.send.pose(self.main.liste[n].no,self.main.liste[n].couleur)
+    def do_demande(self,nom,nb):
+        input("{0}, quelle carte voulez-vous poser ?".format(nom))
+        self.send.pose(nb,n)
 
     def do_err1(self):
         print "Le carte demandée n'est pas dans votre main."
@@ -55,12 +55,11 @@ class SessionOnClient(Session):
     def do_logIn_OK(self):
         print "Connexion réussie"
 
-    def choisirNom(self):
-        nom = raw_input("Entrez votre pseudo : ")
-        return nom
-
     def endClient(self):
         self.finish()
+
+    def do_affiche(self,texte):
+        print texte
 
 client = Client(proto, SessionOnClient)
 client.run_argv()

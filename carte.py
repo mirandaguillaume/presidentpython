@@ -8,7 +8,7 @@ class Carte:
         self.no=no
 
     def affiche(self):
-        print "{0} de {1}".format(self.no,self.couleur)
+        return "{0} de {1}".format(self.no,self.couleur)
 
     def __gt__(self,other):
     	if self.no==other.no:

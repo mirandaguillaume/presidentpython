@@ -6,6 +6,10 @@ class Main:
     def __init__ (self):
         self.liste=list()
 
+    def affiche(self,client):
+        for i in range(len(self.liste)):
+            client.send.affiche("{0}. {1}".format(i+1,self.liste[i].affiche()))
+
     def afficher(self):
         for i in range(len(self.liste)):
             if self.liste[i]!=0:

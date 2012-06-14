@@ -8,9 +8,8 @@ from main import Main
 class jeu:
 	nbGagnant=0
 	def __init__(self,nbJoueurs,Joueurs):
-		Paquet=paquet()
-		Paquet.melangePaquet()
-		self.nbJoueurs=nbJoueurs
+		self.Paquet=paquet()
+    		self.nbJoueurs=nbJoueurs
 		self.Joueurs=Joueurs
 		self.DerniereCarte=Carte("H",1)
 		self.cpt=0
@@ -24,14 +23,15 @@ class jeu:
 			return True
 		return False	
 
-	def possibleJouer(self,carte):
-		nb=self.cpt%self.nbJoueurs
+	def possibleJouer(self,n,nb):
+		carte=self.Joueurs[nb].main.liste[n]
 		if carte.no==self.DerniereCarte.no:
 			return True
 		else: return carte>DerniereCarte
 	
 
-	def setDerniereCarte(carte):
+	def setDerniereCarte(n,nb):
+		carte=self.Joueurs[nb].main.liste[n]
 		self.DerniereCarte=carte
 
 	def setCpt():

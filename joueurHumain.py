@@ -27,6 +27,9 @@ class joueurHumain:
     def NbMain(self):
         return self.main.taille()
 
+    def afficheMain(self,client):
+        self.main.affiche(client)
+
     def jouer(self,DerniereCarte):
         self.main.trieMain()
         self.main.afficher()
