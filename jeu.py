@@ -12,7 +12,8 @@ class jeu:
 		Paquet.melangePaquet()
 		self.nbJoueurs=nbJoueurs
 		self.Joueurs=Joueurs
-		Paquet.distribuer(self.Joueurs,52/nbJoueurs)
+		self.DerniereCarte=Carte("H",1)
+		self.cpt=0
 
 	def resteDeuxJoueur(self):
 		cpt=0
@@ -21,13 +22,29 @@ class jeu:
 				cpt+=1
 		if (cpt<3):
 			return True
-		return False
+		return False	
+
+	def possibleJouer(self,carte):
+		nb=self.cpt%self.nbJoueurs
+			if carte.no==self.DerniereCarte.no:
+				return True
+			else: return carte>DerniereCarte
+	
+
+	def setDerniereCarte(carte):
+		self.DerniereCarte=carte
+
+	def setCpt():
+		cpt+=1
+
+	def setNbGagnant():
+		self.nbGagnant=self.cpt%self.nbJoueurs
+
+	def setSeCouche(etat):
+		seCouche=etat
 
 	def tour(self):
-		NouvelleListe=list()
-		cpt=self.nbGagnant
-		DerniereCarte=Carte("H",1)
-		print "ok1"
+	
 		while(self.resteDeuxJoueur()):
 			print "ok2"
 			if (self.Joueurs[cpt%self.nbJoueurs].seCouche==False): 
@@ -64,11 +81,14 @@ class jeu:
 		self.EchangesCartes(0,nbJoueurs-1)
 
 	def EchangeCartes(Recv,Send):
-		print "Le prisonnier {0} donne ses 2 meilleures cartes au président {1}.".format(self.Joueurs[Send].nom,self.Joueurs[Recv].nom)
+		pass
+		"""print "Le prisonnier {0} donne ses 2 meilleures cartes au président {1}.".format(self.Joueurs[Send].nom,self.Joueurs[Recv].nom)
 		self.Joueurs[Send].trieMain()
 		self.Joueurs[Recv].recevoirCarte(self.Joueurs[Send].poserCarte(12))
 		self.Joueurs[Recv].recevoirCarte(self.Joueurs[Send].poserCarte(11))
 		print "Le président {0} donne ses 2 pires cartes au prisonnier {1}."format(self.Joueurs[Send].nom,self.Joueurs[Recv].nom)
+
 		self.Joueurs[Recv].trieMain()
 		self.Joueurs[Send].recevoirCarte(self.Joueurs[Recv].poserCarte(0))
 		self.Joueurs[Send].recevoirCarte(self.Joueurs[Recv].poserCarte(1))
+"""
