@@ -9,6 +9,7 @@ class joueurHumain:
     - son nom"""
 
     seCouche=False
+    Afini=False
 
     def __init__(self,nom):
         self.nom=nom
@@ -27,8 +28,9 @@ class joueurHumain:
     def NbMain(self):
         return self.main.taille()
 
-    def afficheMain(self,client):
+    def afficheMain(self,client,nb):
         self.main.affiche(client)
+        client.send.demande(self.nom,nb)
 
     def jouer(self,DerniereCarte):
         self.main.trieMain()

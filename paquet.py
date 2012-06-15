@@ -33,9 +33,6 @@ class paquet:
 		return self.paquet.enleverCarte(0)
 
 	def distribuer(self,listejoueurs,nbMain):
-		for i in range(len(listejoueurs)):
-			print i
-			print listejoueurs[i].nom
 		for i in range(nbMain):
 			for j in range(len(listejoueurs)):
 				listejoueurs[j].recevoirCarte(self.donnerCarte())

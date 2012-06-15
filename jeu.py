@@ -34,55 +34,9 @@ class jeu:
 
 	def setCpt(self):
 		self.cpt+=1
-		self.setNbGagnant()
 
 	def setNbGagnant(self):
 		self.nbGagnant=self.cpt%self.nbJoueurs
 
-	def setSeCouche(i,etat):
+	def setSeCouche(self,i,etat):
 		self.Joueurs[i].seCouche=etat
-
-	def tour(self):
-		if (self.Joueurs[cpt%self.nbJoueurs].seCouche==False): 
-			if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
-	       			print "Au tour de {0}".format(self.Joueurs[cpt%self.nbJoueurs].nom)
-				NewDerniereCarte=self.Joueurs[cpt%self.nbJoueurs].jouer(DerniereCarte);
-			if(NewDerniereCarte!=DerniereCarte):
-				self.nbGagnant=cpt%self.nbJoueurs
-				DerniereCarte=NewDerniereCarte
-				if (self.Joueurs[cpt%self.nbJoueurs].NbMain()==0):
-					NouvelleListe.insert(len(NouvelleListe),self.Joueurs[cpt%self.nbJoueurs])
-					if (DerniereCarte.no==2) :
-						print "Le gagnant du tour est {0}".format(self.Joueurs[self.nbGagnant].nom)
-      					else:
-						DerniereCarte.affiche()
-						cpt+=1
-		   			
-	def resteUnJoueurEnJeu(self):
-		cpt=0
-		for i in range(i):
-			if (self.Joueurs[i].main.taille()==0):
-				cpt+=1
-			if (cpt==3):
-				return True
-		return False
-
-	def manche(self):
-		NouvelleListe=list()
-		while(self.resteUnJoueurEnJeu()) :
-			tour(NouvelleListe)
-		self.Joueurs=NouvelleListe
-		self.EchangesCartes(0,nbJoueurs-1)
-
-	def EchangeCartes(Recv,Send):
-		pass
-		"""print "Le prisonnier {0} donne ses 2 meilleures cartes au président {1}.".format(self.Joueurs[Send].nom,self.Joueurs[Recv].nom)
-		self.Joueurs[Send].trieMain()
-		self.Joueurs[Recv].recevoirCarte(self.Joueurs[Send].poserCarte(12))
-		self.Joueurs[Recv].recevoirCarte(self.Joueurs[Send].poserCarte(11))
-		print "Le président {0} donne ses 2 pires cartes au prisonnier {1}."format(self.Joueurs[Send].nom,self.Joueurs[Recv].nom)
-
-		self.Joueurs[Recv].trieMain()
-		self.Joueurs[Send].recevoirCarte(self.Joueurs[Recv].poserCarte(0))
-		self.Joueurs[Send].recevoirCarte(self.Joueurs[Recv].poserCarte(1))
-"""

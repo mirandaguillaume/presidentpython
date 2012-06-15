@@ -9,6 +9,7 @@ class SessionOnClient(Session):
         print "Bienvenue",nom
 
     def do_demande(self,nom,nb):
+        print "ok"
         n=input("{0}, quelle carte voulez-vous poser ?".format(nom))
         self.send.pose(n-1,nb)
 
@@ -26,6 +27,9 @@ class SessionOnClient(Session):
                 
     def do_lost_manche(self,place):
         pass
+
+    def do_finish(self):
+        self.finish()
 
     def do_wait(self, nom):
         print "En attente de ",nom
