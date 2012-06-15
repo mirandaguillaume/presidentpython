@@ -55,8 +55,11 @@ class SessionOnClient(Session):
     def endClient(self):
         self.finish()
 
-    def do_affiche(self,texte):
+    def do_afficher(self,texte):
         print texte
+
+    def do_affiche(self,texte):
+        print texte,"\n"
 
 client = Client(proto, SessionOnClient)
 client.run_argv()
