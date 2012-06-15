@@ -14,8 +14,7 @@ class SessionOnServer(Session):
                self.send.logIn_Refused()
                
      def do_pose(self, n, nb):
-          if n!=-1:
-               GameMaster.poserCarte(n,nb)
+          GameMaster.poserCarte(n,nb)
                
 server = Server(proto, SessionOnServer)
 server.run_argv()

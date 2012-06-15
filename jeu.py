@@ -12,7 +12,7 @@ class jeu:
     		self.nbJoueurs=nbJoueurs
 		self.Joueurs=Joueurs
 		self.DerniereCarte=Carte("H",1)
-		self.cpt=0
+		self.cpt=-1
 
 	def resteDeuxJoueur(self):
 		cpt=0
